@@ -1,17 +1,18 @@
-import app from "./src/app.js"
-import conexao from './infra/conexao.js'
-const port = 3000;
+import app from './src/index.js'
+// import conexao from './src/app/database/index.js'
 
-conexao.connect((erro) => {
-    if (erro) {
-        console.log("Erro na conexão")
-    } else {
-        console.log("Conexão com Sucesso")
+
+const port = 3000
+
+// //realizando a connection
+// conexao.connect((erro) => {
+//     if (erro) {
+//         console.log(`Falha ao conectar-se ao banco de dados: ${erro}`)
+//     } else {
+//         console.log("Conexão com Banco de Dados realizada com Sucesso")
+//         // Escutando a porta    
         app.listen(port, () => {
-            console.log(`Server is running on http://localhost:${port}`)
+            console.log(`Servidor rodando http://localhost:${port}`)
         })
-    }
-    
-})
-
-
+//     }
+// })
